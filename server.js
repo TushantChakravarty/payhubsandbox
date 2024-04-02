@@ -29,41 +29,41 @@ const {
 // const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
 // const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 
-// cron.schedule("0 30 18 * * *", async () => {
-//   // Get the last execution date from the file
-//   const admin = await adminDao.getUserDetails({
-//     emailId: "samir123@payhub",
-//   });
-//   const lastExecutionDate = admin.lastExecutionDate;
+cron.schedule("0 30 18 * * *", async () => {
+  // Get the last execution date from the file
+  const admin = await adminDao.getUserDetails({
+    emailId: "samir123@payhub",
+  });
+  const lastExecutionDate = admin.lastExecutionDate;
 
-//   // Get the current date
-//   const currentDate = new Date().toISOString().split("T")[0];
+  // Get the current date
+  const currentDate = new Date().toISOString().split("T")[0];
 
-//   // Check if the function has not been executed today
-//   if (lastExecutionDate !== currentDate) {
-//     // Run your function
-//     myFunction();
-//     updateAdmin();
-//     updateAdminYesterdayTx();
-//     console.log("running");
+  // Check if the function has not been executed today
+  if (lastExecutionDate !== currentDate) {
+    // Run your function
+    myFunction();
+    updateAdmin();
+    updateAdminYesterdayTx();
+    console.log("running");
 
-//     // Update the last execution date in the file
-//     //fs.writeFileSync(DATE_FILE, currentDate);
-//     const update = {
-//       lastExecutionDate: currentDate,
-//     };
-//     adminDao.updateProfile(
-//       {
-//         emailId: "samir123@payhub",
-//       },
-//       update
-//     );
-//   }
-// });
-// cron.schedule("0 40 18 * * *", async () => {
-//   updateAdminYesterdayTx();
-// });
-// //updateAdminYesterdayTx()
+    // Update the last execution date in the file
+    //fs.writeFileSync(DATE_FILE, currentDate);
+    const update = {
+      lastExecutionDate: currentDate,
+    };
+    adminDao.updateProfile(
+      {
+        emailId: "samir123@payhub",
+      },
+      update
+    );
+  }
+});
+cron.schedule("0 40 18 * * *", async () => {
+  updateAdminYesterdayTx();
+});
+//updateAdminYesterdayTx()
 // cron.schedule("*/10 * * * *", async () => {
 //   await adminDao.updateVolumeData("success");
 //   await adminDao.getTotalVolume("success");

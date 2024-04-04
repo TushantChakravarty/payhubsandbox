@@ -82,6 +82,7 @@ cron.schedule("0 40 18 * * *", async () => {
 // updatePendingTransactionStatus()
 // });
 
+
 //getTransactionsSummaryYesterday()
 
 config.dbConfig((err) => {

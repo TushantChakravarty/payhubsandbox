@@ -64,22 +64,22 @@ cron.schedule("0 40 18 * * *", async () => {
   updateAdminYesterdayTx();
 });
 //updateAdminYesterdayTx()
-// cron.schedule("*/10 * * * *", async () => {
-//   await adminDao.updateVolumeData("success");
-//   await adminDao.getTotalVolume("success");
-//   await adminDao.updateGatewayVolumeData();
-// await updateVolumeDataPayouts("success")
-// await getTotalAdminVolumePayouts("success")
-// });
+cron.schedule("10 */2 * * *", async () => {
+  await adminDao.updateVolumeData("success");
+  await adminDao.getTotalVolume("success");
+  await adminDao.updateGatewayVolumeData();
+  await updateVolumeDataPayouts("success");
+  await getTotalAdminVolumePayouts("success");
+});
 
-// cron.schedule("*/30 * * * *", async () => {
-//   await adminDao.updateTotalGatewayBalance();
-//   await adminDao.updateBalanceMerchants()
-//   await adminDao.updateBalanceAdmin()
-// });
-// //updatePayoutsBalanceMerchants()
-// cron.schedule("*/40 * * * *", async () => {
-// updatePendingTransactionStatus()
+cron.schedule("30 */2 * * *", async () => {
+  await adminDao.updateTotalGatewayBalance();
+  await adminDao.updateBalanceMerchants();
+  await adminDao.updateBalanceAdmin();
+});
+//updatePayoutsBalanceMerchants()
+// cron.schedule("40 */2 * * *", async () => {
+//   updatePendingTransactionStatus();
 // });
 
 

@@ -11,21 +11,21 @@ const {
   myFunction,
   updateAdmin,
   updateAdminYesterdayTx,
-} = require("./lib/user/scheduler/scheduler");
-const adminDao = require("./lib/user/adminDao");
+} = require("./lib/routesAndServices/scheduler/scheduler");
+const adminDao = require("./lib/routesAndServices/admin/adminDao");
 const {
   getTransactionsSummaryYesterday,
-} = require("./lib/user/transactionsDao/TransactionDao");
+} = require("./lib/routesAndServices/transactionsDao/TransactionDao");
 const { MongoClient } = require("mongodb");
-const { getAllUsers } = require("./lib/user/userDao");
+const { getAllUsers } = require("./lib/routesAndServices/user/userDao");
 const {
   updatePendingTransactionStatus,
-} = require("./lib/user/scheduler/statusScheduler");
+} = require("./lib/routesAndServices/scheduler/statusScheduler");
 const {
   updateVolumeDataPayouts,
   getTotalAdminVolumePayouts,
   updatePayoutsBalanceMerchants,
-} = require("./lib/user/payouts/payoutsDao");
+} = require("./lib/routesAndServices/payouts/payoutsDao");
 // const { getAllPendinTransactionsPaythrough } = require("./lib/controllers/paythrough");
 // const { updatePendingTransactionStatus } = require("./lib/user/scheduler/statusScheduler");
 

@@ -63,7 +63,6 @@ cron.schedule("0 30 18 * * *", async () => {
 cron.schedule("0 40 18 * * *", async () => {
   updateAdminYesterdayTx();
 });
-//updateAdminYesterdayTx()
 // Runs every 5 hours
 cron.schedule("0 */5 * * *", async () => {
   await adminDao.updateVolumeData("success");
